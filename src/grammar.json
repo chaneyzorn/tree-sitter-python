@@ -804,27 +804,11 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "if"
-        },
-        {
           "type": "FIELD",
-          "name": "condition",
+          "name": "subment",
           "content": {
             "type": "SYMBOL",
-            "name": "expression"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
-          "type": "FIELD",
-          "name": "consequence",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_suite"
+            "name": "if_subment"
           }
         },
         {
@@ -853,6 +837,35 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "if_subment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "consequence",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_suite"
+          }
         }
       ]
     },
@@ -1202,19 +1215,11 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "try"
-        },
-        {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
           "type": "FIELD",
-          "name": "body",
+          "name": "subment",
           "content": {
             "type": "SYMBOL",
-            "name": "_suite"
+            "name": "try_subment"
           }
         },
         {
@@ -1297,6 +1302,27 @@
               "name": "finally_clause"
             }
           ]
+        }
+      ]
+    },
+    "try_subment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "try"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_suite"
+          }
         }
       ]
     },

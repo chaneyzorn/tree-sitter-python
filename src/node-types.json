@@ -1948,6 +1948,22 @@
           }
         ]
       },
+      "subment": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "if_subment",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "if_subment",
+    "named": true,
+    "fields": {
       "condition": {
         "multiple": false,
         "required": true,
@@ -2869,12 +2885,12 @@
     "type": "try_statement",
     "named": true,
     "fields": {
-      "body": {
+      "subment": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "block",
+            "type": "try_subment",
             "named": true
           }
         ]
@@ -2901,6 +2917,22 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "try_subment",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3475,10 +3507,6 @@
   },
   {
     "type": "[",
-    "named": false
-  },
-  {
-    "type": "\\",
     "named": false
   },
   {

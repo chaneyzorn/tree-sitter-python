@@ -272,12 +272,16 @@ module.exports = grammar({
     ),
 
     if_statement: $ => seq(
+      field('subment', $.if_subment),
+      repeat(field('alternative', $.elif_clause)),
+      optional(field('alternative', $.else_clause)),
+    ),
+
+    if_subment: $ => seq(
       'if',
       field('condition', $.expression),
       ':',
       field('consequence', $._suite),
-      repeat(field('alternative', $.elif_clause)),
-      optional(field('alternative', $.else_clause)),
     ),
 
     elif_clause: $ => seq(
@@ -339,9 +343,7 @@ module.exports = grammar({
     ),
 
     try_statement: $ => seq(
-      'try',
-      ':',
-      field('body', $._suite),
+      field('subment', $.try_subment),
       choice(
         seq(
           repeat1($.except_clause),
@@ -355,6 +357,12 @@ module.exports = grammar({
         ),
         $.finally_clause,
       ),
+    ),
+
+    try_subment: $ => seq(
+      'try',
+      ':',
+      field('body', $._suite),
     ),
 
     except_clause: $ => seq(
